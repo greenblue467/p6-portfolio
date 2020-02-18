@@ -76,11 +76,6 @@ body {
   }
 }
 
-header,
-main,
-footer {
-  display: none;
-}
 @import "./header";
 @import "./main";
 @import "./footer";

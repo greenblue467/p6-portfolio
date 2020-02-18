@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+/*window.addEventListener("load", function() {
   $(".loading").fadeOut("slow");
   $("header").css({
     display: "block"
@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
   $("footer").css({
     display: "block"
   });
-});
+});*/
 
 //global
 $(window).scroll(function() {
