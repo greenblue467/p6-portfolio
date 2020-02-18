@@ -292,6 +292,7 @@
         width: 280px;
       }
       a {
+        display: table;
         position: relative;
         text-decoration: none;
         color: $color5;
@@ -316,20 +317,19 @@
           }
         }
         p {
+          display: table-cell;
           width: 220px;
           position: absolute;
           top: 215px;
-          left: -110px;
+          left: 0px;
           @include trans(0.4s);
           @include pad {
             width: 340px;
             top: 330px;
-            left: -170px;
           }
           @include desktop {
             width: 280px;
             top: 285px;
-            left: -140px;
           }
         }
         div {

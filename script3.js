@@ -58,7 +58,7 @@ $("#menu_link").on("click", function() {
 $(".menu_item").addClass("item_color ");
 
 $(".logo").on("click", function() {
-  $("html").animate(
+  $("html,body").animate(
     {
       scrollTop: 0
     },

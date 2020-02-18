@@ -470,7 +470,7 @@ header .my_picture .my_info h1::before {
     top: 0;
   }
   50% {
-    top: 0.5rem;
+    top: 8px;
   }
   100% {
     top: 0;
@@ -482,7 +482,7 @@ header .my_picture .my_info h1::before {
     top: 0;
   }
   50% {
-    top: 0.5rem;
+    top: 8px;
   }
   100% {
     top: 0;
@@ -945,6 +945,7 @@ header .nav_color {
 }
 
 .project ul li a {
+  display: table;
   position: relative;
   text-decoration: none;
   color: #4d4d4d;
@@ -983,10 +984,11 @@ header .nav_color {
 }
 
 .project ul li a p {
+  display: table-cell;
   width: 220px;
   position: absolute;
   top: 215px;
-  left: -110px;
+  left: 0px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -995,7 +997,6 @@ header .nav_color {
   .project ul li a p {
     width: 340px;
     top: 330px;
-    left: -170px;
   }
 }
 
@@ -1003,7 +1004,6 @@ header .nav_color {
   .project ul li a p {
     width: 280px;
     top: 285px;
-    left: -140px;
   }
 }
 
