@@ -1,4 +1,4 @@
-window.addEventListener("load", function() {
+$("window").on("load", function() {
   $(".loading").fadeOut("slow");
   $("header").css({
     display: "block"
