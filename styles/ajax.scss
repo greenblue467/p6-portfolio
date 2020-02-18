@@ -1,0 +1,504 @@
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $color1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", arial, sans-serif,
+    Microsoft JhengHei;
+  letter-spacing: 0.1rem;
+}
+.loading {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.9);
+  position: fixed;
+  z-index: 100;
+  @include trans(0.5s);
+  div:nth-child(1) {
+    color: white;
+    position: absolute;
+    top: calc(40% - 7.5px);
+    left: calc(50% - 100px);
+    font-size: getSize(large);
+    opacity: 0.6;
+  }
+  div:nth-child(2) {
+    background-color: $color1;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 40%;
+    border-radius: 99rem;
+    opacity: 0.2;
+    left: calc(50% + 15px);
+    animation: load_effect 2s infinite;
+  }
+  div:nth-child(3) {
+    background-color: $color2;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 40%;
+    border-radius: 99rem;
+    opacity: 0.2;
+    left: calc(50% + 45px);
+    animation: load_effect 2s 0.6667s infinite;
+  }
+  div:nth-child(4) {
+    background-color: $color3;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 40%;
+    border-radius: 99rem;
+    opacity: 0.2;
+    left: calc(50% + 75px);
+    animation: load_effect 2s 1.3334s infinite;
+  }
+  @keyframes load_effect {
+    0% {
+      opacity: 0.2;
+    }
+    33.333% {
+      opacity: 1;
+    }
+    66.667% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 0.2;
+    }
+  }
+}
+.loading_dis {
+  opacity: 0;
+  visibility: hidden;
+}
+
+header,
+main,
+footer {
+  display: none;
+}
+
+nav {
+  width: 100vw;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  position: fixed;
+  z-index: 5;
+  background-color: rgba($color2, 0);
+  @include trans(1.5s);
+  .menu {
+    background-color: rgba($color2, 0.9);
+    position: absolute;
+    right: -100vw;
+    top: 4rem;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    font-size: getSize(large);
+    @include trans(1s);
+    @include desktop {
+      position: relative;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: initial;
+      display: flex;
+      justify-content: flex-end;
+      font-size: initial;
+      background-color: initial;
+    }
+    .menu_item {
+      list-style: none;
+      color: $color5;
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+      top: 10vh;
+      right: -100vw;
+      cursor: pointer;
+      transition: right 1s;
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * 0.1s;
+        }
+      }
+      &:hover {
+        color: $color5-1;
+      }
+      @include desktop {
+        width: 8rem;
+        right: 0;
+        top: 0;
+        padding: 0.8rem 0;
+        margin-left: 1rem;
+        color: $color2;
+        &::after {
+          content: "";
+          width: 8rem;
+          height: 0.1rem;
+          background-color: white;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          transform: scale(0);
+          @include trans(0.5s);
+        }
+        &:hover {
+          color: white;
+          &::after {
+            transform: scale(1);
+          }
+        }
+      }
+      .menu_link {
+        text-decoration: none;
+        color: $color5;
+
+        &:hover {
+          color: $color5-1;
+        }
+        @include desktop {
+          color: $color2;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+      .link_change {
+        @include desktop {
+          color: $color5;
+        }
+      }
+      .submenu {
+        list-style: none;
+        background-color: rgba($color6, 0.5);
+        margin-top: 1rem;
+        display: none;
+        @include desktop {
+          position: absolute;
+          left: 0;
+          top: 2.5rem;
+          padding: 1rem;
+          background-color: rgba($color2, 0.8);
+        }
+        .submenu_item {
+          padding: 1rem 0;
+          a {
+            text-decoration: none;
+            color: $color5;
+            font-size: getSize(medium);
+            &:hover {
+              color: $color5-1;
+            }
+            @include desktop {
+              font-size: initial;
+              &:hover {
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .item_change {
+      @include desktop {
+        color: $color5;
+      }
+    }
+    .item_color {
+      color: $color5-1;
+      @include desktop {
+        color: white;
+      }
+    }
+
+    .item_slide {
+      right: 0;
+    }
+  }
+  .menu_slide {
+    right: 0;
+  }
+  .logo {
+    font-size: getSize(medium);
+    color: $color2;
+    letter-spacing: 0.5rem;
+    @include trans(0.5s);
+    cursor: pointer;
+    &:hover {
+      color: white;
+    }
+  }
+  .logo_change {
+    color: $color5;
+    &:hover {
+      color: $color5-1;
+    }
+    @include desktop {
+      color: $color2;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  .logo_color {
+    @include desktop {
+      color: $color5;
+    }
+  }
+  .hamburger {
+    position: relative;
+    width: 45px;
+    height: 33px;
+    cursor: pointer;
+    @include trans(0.5s);
+    &:hover {
+      transform: rotate(180deg);
+    }
+    @include desktop {
+      display: none;
+    }
+    .hamburger_icon1 {
+      width: 45px;
+      height: 5px;
+      background-color: $color2;
+      border-radius: 999rem;
+      position: absolute;
+      top: 0;
+      @include trans(1s);
+    }
+    .hamburger_icon2 {
+      @extend .hamburger_icon1;
+      top: 14px;
+    }
+    .hamburger_icon3 {
+      @extend .hamburger_icon1;
+      width: 30px;
+      top: 28px;
+    }
+    .hamburger_change1 {
+      transform: rotate(315deg);
+      top: 14px;
+      opacity: 0;
+    }
+    .hamburger_change2 {
+      transform: rotate(315deg);
+    }
+    .hamburger_change3 {
+      width: 45px;
+      top: 14px;
+      transform: rotate(-315deg);
+    }
+    .hamburger_color1,
+    .hamburger_color2,
+    .hamburger_color3 {
+      background-color: $color5;
+    }
+  }
+}
+.nav_color {
+  background-color: rgba($color2, 0.9);
+  @include desktop {
+    background-color: rgba($color2, 0);
+  }
+}
+.nav_change {
+  @include desktop {
+    background-color: rgba($color2, 0.9);
+  }
+}
+.my_picture {
+  height: 50vh;
+  background: linear-gradient(
+      -45deg,
+      rgba(41, 66, 148, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("../img/me2.jpg") center top;
+  background-size: cover;
+  position: relative;
+  &::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 8px solid rgba($color2, 0);
+    border-top: 8px solid $color2;
+    border-right: 8px solid rgba($color2, 0);
+    border-left: 8px solid rgba($color2, 0);
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-5px) translateY(19vh);
+    animation: ani-1 1.5s infinite linear;
+  }
+  @keyframes ani-1 {
+    0% {
+      top: 0;
+    }
+    50% {
+      top: 0.5rem;
+    }
+    100% {
+      top: 0;
+    }
+  }
+  .my_info {
+    position: relative;
+    top: calc(50% - 2rem);
+    left: calc(50% - 100px);
+    width: 200px;
+    height: 4rem;
+    text-align: center;
+    color: white;
+    font-size: getSize(medium);
+    overflow: hidden;
+
+    .s1 {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, white);
+      position: absolute;
+      top: 0;
+      left: -100%;
+      animation: run 1s;
+    }
+    .s2 {
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, white);
+      position: absolute;
+      top: -100%;
+      left: calc(100% - 2px);
+      animation: run2 1s 0.25s;
+    }
+    .s3 {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, transparent, white);
+      position: absolute;
+      top: calc(100% - 2px);
+      left: 100%;
+      animation: run3 1s 0.5s;
+    }
+    .s4 {
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, transparent, white);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      animation: run4 1s 0.75s;
+    }
+    @keyframes run {
+      100% {
+        left: 100%;
+      }
+    }
+    @keyframes run2 {
+      100% {
+        top: 100%;
+      }
+    }
+    @keyframes run3 {
+      100% {
+        left: -100%;
+      }
+    }
+    @keyframes run4 {
+      100% {
+        top: -100%;
+      }
+    }
+
+    h1 {
+      font-size: 2rem;
+      line-height: 4rem;
+      span {
+        color: $color2;
+      }
+    }
+  }
+}
+
+.work {
+  padding: 2rem;
+  ul {
+    text-align: center;
+    padding-top: 2rem;
+    @include pad {
+      display: grid;
+      justify-items: center;
+      grid-template-columns: 1fr 1fr;
+    }
+    @include desktop {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    li {
+      list-style: none;
+      font-size: getSize(medium);
+      color: $color5;
+      width: 300px;
+      margin: 2rem auto;
+      a {
+        div {
+          width: 100%;
+          height: 300px;
+          margin-bottom: 1rem;
+          position: relative;
+          overflow: hidden;
+          &::after {
+            content: "";
+            width: 100%;
+            height: 300px;
+            background-color: rgba($color3, 0.9);
+            position: absolute;
+            left: 0;
+            top: 100%;
+            @include trans(1s);
+          }
+          img {
+            width: 100%;
+          }
+          span {
+            position: absolute;
+            z-index: 2;
+            top: 100%;
+            left: calc(50% - 3rem);
+            color: white;
+            @include trans(1s);
+          }
+          &:hover {
+            &::after {
+              top: 0;
+            }
+            span {
+              top: 48%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $color2;
+  padding: 5rem;
+  color: $color5;
+  text-align: center;
+}
