@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-  //$(".loading").fadeOut("slow");
+  $(".loading").fadeOut("slow");
 });
 $(document).ready(function() {
   //global
