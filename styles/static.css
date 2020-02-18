@@ -99,11 +99,6 @@ body {
   }
 }
 
-.loading_dis {
-  opacity: 0;
-  visibility: hidden;
-}
-
 nav {
   width: 100vw;
   height: 4rem;

@@ -1,15 +1,6 @@
-/*window.addEventListener("load", function() {
+window.addEventListener("load", function() {
   $(".loading").fadeOut("slow");
-  $("header").css({
-    display: "block"
-  });
-  $("main").css({
-    display: "block"
-  });
-  $("footer").css({
-    display: "block"
-  });
-});*/
+});
 
 //global
 $(window).scroll(function() {
