@@ -26,6 +26,16 @@ body {
     left: calc(50% - 100px);
     font-size: getSize(large);
     opacity: 0.6;
+    text-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+    animation: glow 2s infinite;
+  }
+  @keyframes glow {
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
   }
   div:nth-child(2) {
     background-color: $color1;

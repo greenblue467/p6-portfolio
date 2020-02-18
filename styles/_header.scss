@@ -42,7 +42,7 @@ header {
         right: -100vw;
         cursor: pointer;
         transition: right 1s;
-        @for $i from 1 through 4 {
+        @for $i from 1 through 5 {
           &:nth-child(#{$i}) {
             transition-delay: $i * 0.1s;
           }

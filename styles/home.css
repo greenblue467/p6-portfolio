@@ -26,6 +26,27 @@ body {
   left: calc(50% - 100px);
   font-size: 1.5rem;
   opacity: 0.6;
+  text-shadow: 0 0 10px white, 0 0 40px white, 0 0 80px white;
+  -webkit-animation: glow 2s infinite;
+          animation: glow 2s infinite;
+}
+
+@-webkit-keyframes glow {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes glow {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
 }
 
 .loading div:nth-child(2) {
@@ -181,6 +202,11 @@ header nav .menu .menu_item:nth-child(3) {
 header nav .menu .menu_item:nth-child(4) {
   -webkit-transition-delay: 0.4s;
           transition-delay: 0.4s;
+}
+
+header nav .menu .menu_item:nth-child(5) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 header nav .menu .menu_item:hover {
