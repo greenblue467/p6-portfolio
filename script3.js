@@ -1,5 +1,5 @@
 window.addEventListener("load", function() {
-  $(".loading").addClass("loading_dis");
+  $(".loading").fadeOut("slow");
   $("header").css({
     display: "block"
   });
